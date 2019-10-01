@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://proto.ink/xmlrpc.php">
+<!--[if lt IE 9]><script src="https://proto.ink/wp-content/themes/binderpro/js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="https://proto.ink/wp-content/themes/binderpro/js/selectivizr-min.js"></script><![endif]-->
+
+
+<link rel="shortcut icon" href="http://37.97.129.76/~magazine/wp-content/uploads/2015/01/LogoTemp_negatief_favcon1.jpg">
+
+
+<title>Raspberry Pi for Creative Technologists &#8211; Proto.ink</title>
+<link rel='dns-prefetch' href='https://s0.wp.com/' />
+<link rel='dns-prefetch' href='https://secure.gravatar.com/' />
+<link rel='dns-prefetch' href='https://maps.googleapis.com/' />
+<link rel='dns-prefetch' href='https://ajax.googleapis.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Proto.ink &raquo; Feed" href="../../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Proto.ink &raquo; Comments Feed" href="../../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Proto.ink &raquo; Raspberry Pi for Creative Technologists Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/proto.ink\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.11"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='responsive-lightbox-swipebox-css'  href='../../../../wp-content/plugins/responsive-lightbox/assets/swipebox/css/swipebox.min.css%3Fver=1.7.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='html-player-responsive-css'  href='../../../../wp-content/plugins/so-widgets-bundle/widgets/video/css/html-player-responsive.css%3Fver=1.11.8.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mediaelement-css'  href='../../../../wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css%3Fver=4.2.6-78496d1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='../../../../wp-includes/js/mediaelement/wp-mediaelement.min.css%3Fver=4.9.11.css' type='text/css' media='all' />
+<link rel='stylesheet' id='sow-image-default-d9fa1d607b92-css'  href='../../../../wp-content/uploads/siteorigin-widgets/sow-image-default-d9fa1d607b92.css%3Fver=4.9.11.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../../../wp-content/themes/binderpro/inc/qi-framework/fonts/font-awesome/font-awesome.min.css%3Fver=4.9.11.css' type='text/css' media='all' />
+<link rel='stylesheet' id='quadro-page-builder-css'  href='../../../../wp-content/themes/binderpro/inc/qi-framework/plugins/page-builder-styles.css%3Fver=4.9.11.css' type='text/css' media='all' />
+<link rel='stylesheet' id='quadro-style-css'  href='../../../../wp-content/themes/binderpro/style.css%3Fver=4.9.11.css' type='text/css' media='all' />
+<!-- Inline jetpack_facebook_likebox -->
+<style id='jetpack_facebook_likebox-inline-css' type='text/css'>
+.widget_facebook_likebox {
+	overflow: hidden;
+}
+
+</style>
+<link rel='stylesheet' id='jetpack-widget-social-icons-styles-css'  href='../../../../wp-content/plugins/jetpack/modules/widgets/social-icons/social-icons.css%3Fver=20170506.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='../../../../wp-content/plugins/jetpack/css/jetpack.css%3Fver=6.0.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js%3Fver=1.12.4'></script>
+<script type='text/javascript' defer src='../../../../wp-includes/js/jquery/jquery-migrate.min.js%3Fver=1.4.1'></script>
+<script type='text/javascript' defer src='../../../../wp-content/plugins/responsive-lightbox/assets/swipebox/js/jquery.swipebox.min.js%3Fver=1.7.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rlArgs = {"script":"swipebox","selector":"lightbox","customEvents":"","activeGalleries":"1","animation":"1","hideCloseButtonOnMobile":"0","removeBarsOnMobile":"0","hideBars":"1","hideBarsDelay":"5000","videoMaxWidth":"1080","useSVG":"1","loopAtEnd":"0","woocommerce_gallery":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='../../../../wp-content/plugins/responsive-lightbox/js/front.js%3Fver=1.7.2'></script>
+<script type='text/javascript'>
+var mejsL10n = {"language":"en","strings":{"mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen-off":"Turn off Fullscreen","mejs.fullscreen-on":"Go Fullscreen","mejs.download-video":"Download Video","mejs.fullscreen":"Fullscreen","mejs.time-jump-forward":["Jump forward 1 second","Jump forward %1 seconds"],"mejs.loop":"Toggle Loop","mejs.play":"Play","mejs.pause":"Pause","mejs.close":"Close","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.time-skip-back":["Skip back 1 second","Skip back %1 seconds"],"mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.mute-toggle":"Mute Toggle","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.ad-skip":"Skip ad","mejs.ad-skip-info":["Skip in 1 second","Skip in %1 seconds"],"mejs.source-chooser":"Source Chooser","mejs.stop":"Stop","mejs.speed-rate":"Speed Rate","mejs.live-broadcast":"Live Broadcast","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+</script>
+<script type='text/javascript' defer src='../../../../wp-includes/js/mediaelement/mediaelement-and-player.min.js%3Fver=4.2.6-78496d1'></script>
+<script type='text/javascript' defer src='../../../../wp-includes/js/mediaelement/mediaelement-migrate.min.js%3Fver=4.9.11'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='../../../../wp-content/plugins/so-widgets-bundle/widgets/video/js/so-video-widget.min.js%3Fver=1.11.8'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js?ver=4.9.11'></script>
+<link rel='https://api.w.org/' href='../../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='The Things You&#8217;re Waiting For In 2017 &#8211; CES 2017 Highlights' href='../../18/the-things-youre-waiting-for-in-2017/index.html' />
+<link rel='next' title='‘’No I do not know how a coffee machine works, nor do I want to.’’' href='../../../02/02/no-i-do-not-know-how-a-coffee-machine-works-nor-do-i-want-to/index.html' />
+<meta name="generator" content="WordPress 4.9.11" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='https://wp.me/p87Ud4-1wp' />
+<link rel="alternate" type="application/json+oembed" href="../../../../wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fproto.ink%252F2017%252F01%252F26%252Fraspberry-pi-for-creative-technologists%252F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../../wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fproto.ink%252F2017%252F01%252F26%252Fraspberry-pi-for-creative-technologists%252F&amp;format=xml" />
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		if (window.wfLogHumanRan) { return; }
+		window.wfLogHumanRan = true;
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//proto.ink/?wordfence_lh=1&hid=FAD672336F985B0B53C913AECFA98030');
+</script>
+<link rel='dns-prefetch' href='https://v0.wordpress.com/'/>
+<style type='text/css'>img#wpstats{display:none}</style><script type="text/javascript">var ajaxurl = "https://proto.ink/wp-admin/admin-ajax.php"</script>
+<script>
+	WebFont.load({
+		google: {
+			families: ['Roboto+Slab:normal, bold', 'Roboto:normal, bold', ],
+		},
+		timeout: 3500 // Set the timeout
+	});
+</script>
+
+<style>
+body {
+	background-color: #f0f0f0;
+	font-family: "Roboto";	font-size: 16px;
+}
+
+
+.mod-title, .meta-nav strong, .site-header .widget-title, .static-menu .main-navigation .menu a {
+	font-family: "Roboto";}
+
+.single-post article a, .single-post article a:visited,
+.page-content a, .page-content a:visited {
+	color: #bb5551;
+}
+
+a:hover,
+.single-post article a:hover,
+.page-content a:hover {
+	color: #231f20;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1, h2, h3, h4, h5, h6,
+.mod-editor-content, .readmore-link, input[type="submit"], .comment-reply-link, 
+.comment-author cite, .post-navigation .meta-nav, .paging-navigation .meta-nav, .comment-navigation a,
+blockquote, q, .taxonomy-description p, .wpcf7 p, .read-author-link a, .qbtn, input[type="button"],
+.flashnews-content .entry-title, div#jp-relatedposts h3.jp-relatedposts-headline, .price-numb {
+	font-family: "Roboto Slab";}
+
+
+
+
+.main-navigation .menu a {
+	font-family: "Roboto Slab";}
+
+.site-footer { background-color: #4a4a4a; }
+.site-footer, .widget select, .widget input[type="submit"] { color: #ffffff }
+.site-footer a { color: # }
+
+
+
+.post-icon {
+opacity: 0;}
+</style>
+<!--[if lt IE 10]>
+<style>
+@media only screen and (min-width: 760px) {
+	.caption-type1 .slide-caption,
+	.caption-type1.caption-right .slide-caption,
+	.caption-type1.caption-alternated .quadro-slides li:nth-of-type(even) .slide-caption {
+		min-width: 500px; 
+		padding: 60px;
+	}
+}
+</style>
+<![endif]-->
+
+<!--[if lt IE 9]>
+			<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Slab:normal| bold| Roboto:normal| bold| ">
+<![endif]-->
+ 
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Raspberry Pi for Creative Technologists" />
+<meta property="og:url" content="https://proto.ink/2017/01/26/raspberry-pi-for-creative-technologists/" />
+<meta property="og:description" content="This article is aimed at those Creative Technologists who have gotten used to Arduino, but hear everybody talking about the Raspberry Pi instead. Maybe some have tried to convince you that the Pi i…" />
+<meta property="article:published_time" content="2017-01-26T10:34:58+00:00" />
+<meta property="article:modified_time" content="2017-01-26T16:00:46+00:00" />
+<meta property="og:site_name" content="Proto.ink" />
+<meta property="og:image" content="https://proto.ink/wp-content/uploads/2017/01/pirobot.jpg" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="530" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:text:title" content="Raspberry Pi for Creative Technologists" />
+<meta name="twitter:image" content="https://proto.ink/wp-content/uploads/2017/01/pirobot.jpg?w=640" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="../../../../wp-content/uploads/2015/01/LogoTemp_negatief_favcon1-150x150.jpg" sizes="32x32" />
+<link rel="icon" href="../../../../wp-content/uploads/2015/01/LogoTemp_negatief_favcon1-300x300.jpg" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../../wp-content/uploads/2015/01/LogoTemp_negatief_favcon1-300x300.jpg" />
+<meta name="msapplication-TileImage" content="https://proto.ink/wp-content/uploads/2015/01/LogoTemp_negatief_favcon1-300x300.jpg" />
+</head>
+
+<body class="post-template-default single single-post postid-5853 single-format-standard site-header-type2 onsingle-sidebar-right woo-sidebar-left woo-cols4 group-blog unknown">
+
+
+
+<div id="page" class="hfeed site">
+	
+	<header id="masthead" class="site-header static-menu header-layout1 show-search" role="banner">
+
+		<div class="inner-header">
+			<div class="site-branding">
+						<h1 class="site-title logo-title">
+			<a href="https://proto.ink/" rel="home">
+				<img src="../../../../wp-content/uploads/2016/01/cropped-cropped-VideoLogo-1.png" alt="Proto.ink" title="Proto.ink">
+			</a>
+		</h1>
+				</div>
+
+			
+						
+			<ul class="social-area  brand-color header-social-icons"><li><a href="https://www.facebook.com/proto.ink/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li><li><a href="https://www.youtube.com/channel/UCKHu5CQOPs2JxkB7CYxxOUw" target="_blank" title="Youtube"><i class="fa fa-youtube"></i></a></li></ul>
+			<h1 class="menu-toggle"><i class="fa fa-bars"></i></h1>
+
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+		<div class="inner-nav">
+			<a class="skip-link screen-reader-text" href="index.html#content">Skip to content</a>
+			<div class="menu-menu-container"><ul id="menu-menu" class="menu"><li id="menu-item-5705" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-5705"><a href="../../../../index.html">Home</a></li>
+<li id="menu-item-5664" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-5664"><a href="../../../../category/technologies/index.html">Technologies</a></li>
+<li id="menu-item-5665" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5665"><a href="../../../../category/creativetechnology/index.html">CreaTe</a></li>
+<li id="menu-item-5666" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5666"><a href="../../../../category/business/index.html">Business</a></li>
+<li id="menu-item-5667" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5667"><a href="../../../../category/click-bait/index.html">Clickbait</a></li>
+<li id="menu-item-5668" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5668"><a href="../../../../category/videos/index.html">Videos</a></li>
+</ul></div>			<div class="header-search"><form role="search" method="get" class="search-form" action="https://proto.ink/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="" value="" name="s" title="Search for:" />
+	</label>
+	<input type="submit" class="search-submit" value="Search" />
+</form></div><span class="search-handler"></span>		</div>
+	</nav><!-- #site-navigation -->
+	
+			
+		</div>
+
+		
+			
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<style scoped>#post-5853 .post-icon:before { color: #000; }#post-5853 .post-icon { background: #779AD8; }</style>
+<article id="post-5853" class="post-5853 post type-post status-publish format-standard has-post-thumbnail hentry category-technologies">
+	<header class="entry-header clear">
+		
+		
+		<h1 class="entry-title">Raspberry Pi for Creative Technologists</h1>
+
+		
+		<div class="entry-meta clear">
+			
+			<span class="post-icon"></span>
+			<span class="posted-on"><a href="index.html" title="10:34 am" rel="bookmark" ><time class="entry-date published" datetime="2017-01-26T10:34:58+00:00">January 26, 2017</time><time class="updated" datetime="2017-01-26T16:00:46+00:00">January 26, 2017</time></a></span>			<div class="byline"><a href="../../../../author/margot/index.html" title="Posts by Margot Rutgers"><img alt='Margot Rutgers' src='https://secure.gravatar.com/avatar/8881fa39255290b6220e97c6d968f964?s=40&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/8881fa39255290b6220e97c6d968f964?s=80&#038;d=mm&#038;r=g 2x' class='avatar avatar-40 photo' height='40' width='40' /></a><span>by <span class="author vcard"><a class="url fn n" href="../../../../author/margot/index.html" title="View all posts by Margot Rutgers">Margot Rutgers</a></span></span></div>
+			<p class="cat-links">In <a href="../../../../category/technologies/index.html" rel="category tag">Technologies</a>.</p>		
+		</div><!-- .entry-meta -->
+
+	</header><!-- .entry-header -->
+
+		<div class="entry-thumbnail">
+		<img width="800" height="480" src="../../../../wp-content/uploads/2017/01/pirobot-800x480.jpg" class="attachment-full-thumb size-full-thumb wp-post-image" alt="Raspberry Pi for Creative Technologists" title="Raspberry Pi for Creative Technologists" />	</div>
+	
+	
+	<div class="entry-content">
+				<p><b></b><b>This article is aimed at those Creative Technologists who have gotten used to Arduino, but hear everybody talking about the Raspberry Pi instead. Maybe some have tried to convince you that the Pi is &#8216;better&#8217; and &#8216;more professional&#8217; in their most authorotive voice, but the thruth is they are very different systems. There is a lot of information on both systems, including comparisons, on the net. But in this article, let&#8217;s focus on what an average Creative Technologist would like to know!</b></p>
+<h3><b>The basic differences</b></h3>
+<p>Let&#8217;s start with the similarities of the Arduino and Pi systems, in order to also see the difference. The first thing a Creative Technologist might notice, is how similar they look. We see a PCB with pins, components and connectors. The first hints of the difference between the systems are those connectors: while Arduino just has a USB port, the Raspberry Pi includes an <b>ethernet port</b>, <b>HDMI, </b>and an <b>SD card slot</b>. This is because Raspberry Pi is a <b>full computer</b>, comparable to a laptop, and therefore needs all this input and output to work as such. Arduino does not – it&#8217;s not a full computer, but a <b>microcontroller</b>, designed to be hooked up to your PC, be programmed and then connected to electronics to control them.</p>
+<figure id="attachment_5860" style="width: 300px" class="wp-caption aligncenter"><img class="size-medium wp-image-5860" src="http://proto.ink/wp-content/uploads/2017/01/pi-300x221.jpg" alt="" width="300" height="221" srcset="../../../../wp-content/uploads/2017/01/pi-300x221.jpg 300w, ../../../../wp-content/uploads/2017/01/pi-768x565.jpg 768w, ../../../../wp-content/uploads/2017/01/pi-1024x753.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /><figcaption class="wp-caption-text">The Raspberry Pi</figcaption></figure>
+<h3><b>Should I use Arduino or Pi?</b></h3>
+<p>On a Raspberry Pi you can do virtually anything you could do with a computer: connect to the internet, display and edit data, even play some games. This makes the Pi for many people ideal for running simple servers, data storage and communication between computers. Us Creative Technologists are, especially for assignments, generally more interested in making applications with sensors and screens.</p>
+<p>The Pi offers an advantage here when it comes to<b> networking:</b> with a built in ethernet port (and Wi-Fi if you have a newer version, which is otherwise available through a dongle) it doesn&#8217;t require a shield like the Arduino would. For example, one CreaTer wanted a device that could track celestial objects. He used the Raspberry Pi to get data on this from the internet, and do some calculations on them. Then, he connected the Pi to his Arduino. By using serial communication, he sent the data to the Pi, to the Arduino. The Arduino then used this data to control a motor, which would turn a laserpointer to the right spot in the sky. As so can see, the Pi is a perfect device for internet-of-things projects.</p>
+<p>Of course, you don&#8217;t need the Arduino to connect hardware to the Pi. The Pi has I/O pins (keep in mind they&#8217;re all digital and not analog!). However, the Arduino offers the Arduino IDE and its corresponding language you all know for easy communication.</p>
+<p>Another important advantage of the Pi is that its processing power is much larger than that of an arduino. For example, complex calculations and video processing are things that the Arduino would struggle with.</p>
+<p>The Pi is not &#8216;programmed&#8217; like you would upload code to an Arduino. It comes, however, with <b>Python (recommended), C, C++, Java </b>and <b>Ruby</b> preinstalled. You can use IDEs on the Pi to program and run code (or the command line if you prefer).</p>
+<p>Why does the Creative Technology curriculum teach Arduino if Pi seems more versatile and powerful? Because it&#8217;s much more straightforward to control electronics using Arduino! You only need an IDE on your working computer and a USB cable to read and write data. The Arduino has analog and digital pins, and the internet is full or shields to control almost anything you can imagine. You don&#8217;t need to run an entire operating system – and if you only possess one mouse, keyboard and monitor, this means you do not need to switch between Raspbian and your standard OS. Finally, Arduino has it&#8217;s own C-based language designed specifically for it, a language you should be familiar with by now!</p>
+<p>So keep in mind that for many applications that a Creative Technologist would make during his study, a Raspberry Pi would be unnecessary and the least efficient option. Don&#8217;t be intimidated by those that mock Arduino for being a &#8216;lesser&#8217; version of Raspberry Pi – they probably don&#8217;t know what they are talking about.</p>
+<p>Keep the advantages and disadvantages of both systems in mind when have to choose between them for your next project.</p>
+<figure id="attachment_5857" style="width: 740px" class="wp-caption aligncenter"><img class="wp-image-5857 size-large" src="http://proto.ink/wp-content/uploads/2017/01/pi-1024x762.png" width="740" height="551" srcset="../../../../wp-content/uploads/2017/01/pi-1024x762.png 1024w, ../../../../wp-content/uploads/2017/01/pi-300x223.png 300w, ../../../../wp-content/uploads/2017/01/pi-768x572.png 768w, ../../../../wp-content/uploads/2017/01/pi.png 1249w" sizes="(max-width: 740px) 100vw, 740px" /><figcaption class="wp-caption-text">From minecraft servers to alarm clocks, there are many examples of Pi projects on websites like instructables.com.</figcaption></figure>
+<h3><b>How do I get started using Pi?</b></h3>
+<p>When you have decided to use the Pi, there are some steps you have to follow to set everything up.</p>
+<p>Download the Raspberry Pi&#8217;s Default OS, <a href="https://www.raspberrypi.org/downloads/"><b>Raspbian</b></a>, put in on an SD card, put the SD card in your Rasperry Pi and you&#8217;re good to go. (Sort of – follow <a href="https://www.howtoforge.com/tutorial/howto-install-raspbian-on-raspberry-pi/">this guide </a>to set up your system.) If you plug in a mouse, keyboard and monitor of course, using the mentioned HDMI and USB ports.<br />
+A CreaTer might find it daunting that Raspberry Pi isn&#8217;t as straightforward as Arduino when it comes to programming. As mentioned, Python is the recommended language for the Raspberry Pi. Try <a href="https://www.raspberrypi.org/learning/physical-computing-with-python/">these tutorials</a> to get started in a manner that will remind you of Arduino.</p>
+<p>There are other great places for tutorials and inspiration, like <a href="http://www.instructables.com/id/Raspberry-Pi-Projects/">instructables.com</a> and <a href="https://diyhacking.com/diy-projects/raspberry-pi-projects/">diyhacking.com</a>. However, if you don&#8217;t have a basic knowledge, these might turn out to be daunting and discourage you from using the Pi further. So, do not be discouraged by the colourful and childish look of the official Raspberry Pi tutorials. They are indeed aimed at a very wide audience, but they are a good way to get started!</p>
+<p>Finally, some of our CreaTe colleagues at SNT wanted to express their concerns to you regarding safety. The standard username and password are the same for every Pi. If you do not change these, your system will likely be hacked to send around spam. And then SNT will block your Pi from the network. Let&#8217;s boldface this to keep them happy: <b>change your username and password as soon as possible! </b></p>
+<h3><b>TL;DR</b></h3>
+<p><b>For CreaTers, the Pi is very interesting to be used in projects that require a network connection. Or projects you would otherwise use a normal computer for, but when you prefer a more compact solution. However, Arduino is still the most straightforward method to achieve most of what you need in projects. Think carefully about the requirements of your project!</b></p>
+<p><b>To get started with Raspberry Pi, try out some of the links mentioned above. Good luck and happy hacking!</b></p>
+<p>&nbsp;</p>
+<p>Featured image <a href="https://www.flickr.com/photos/13815526@N02/13704241533">source</a>: Flickr.</p>
+					</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+
+				
+		
+		
+	<div class="author-box">
+
+		<div class="inner-author">
+
+			<div class="author-name">
+				<a href="../../../../author/margot/index.html" title="Posts by Margot Rutgers"><img alt='Margot Rutgers' src='https://secure.gravatar.com/avatar/8881fa39255290b6220e97c6d968f964?s=120&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/8881fa39255290b6220e97c6d968f964?s=240&#038;d=mm&#038;r=g 2x' class='avatar avatar-120 photo' height='120' width='120' /></a>				<h3>
+					<a href="../../../../author/margot/index.html" title="Posts by Margot Rutgers">
+						Margot Rutgers					</a>
+				</h3>
+			</div>
+			
+			
+			<div class="author-extras">
+				<a class="author-email" href="mailto:prototype@margotrutgers.nl" title="Email Margot Rutgers"><i class="fa fa-envelope-o"></i></a>			</div>
+
+		</div>
+
+	</div>
+
+	
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+				<nav class="navigation post-navigation clear" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="../../18/the-things-youre-waiting-for-in-2017/index.html" rel="prev"><img width="760" height="475" src="../../../../wp-content/uploads/2017/01/ABB5552-760x475.jpg" class="attachment-med-thumb size-med-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2017/01/ABB5552-760x475.jpg 760w, ../../../../wp-content/uploads/2017/01/ABB5552-470x295.jpg 470w" sizes="(max-width: 760px) 100vw, 760px" /><span class="meta-nav"><strong>Previous:</strong><i class="fa fa-angle-left"></i> The Things You&#8217;re Waiting For In 2017 &#8211; CES 2017 Highlights</span></a></div><div class="nav-next"><a href="../../../02/02/no-i-do-not-know-how-a-coffee-machine-works-nor-do-i-want-to/index.html" rel="next"><img width="760" height="475" src="../../../../wp-content/uploads/2017/02/students-760x475.jpeg" class="attachment-med-thumb size-med-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2017/02/students-760x475.jpeg 760w, ../../../../wp-content/uploads/2017/02/students-470x295.jpeg 470w" sizes="(max-width: 760px) 100vw, 760px" /><span class="meta-nav"><strong>Next:</strong>‘’No I do not know how a coffee machine works, nor do I want to.’’ <i class="fa fa-angle-right"></i></span></a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+			
+<div id="comments" class="comments-area">
+
+	
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://proto.ink/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5853' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1c3a6bf95b" /></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="216"/></p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	
+
+		<div id="secondary" class="widget-area" role="complementary">
+						<aside id="sow-video-2" class="widget widget_sow-video"><div class="so-widget-sow-video so-widget-sow-video-base">
+<div class="sow-video-wrapper">
+		<iframe width="740" height="416" src="https://www.youtube.com/embed/F3pPOcspGcI?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	</div>
+</div></aside><aside id="sow-image-3" class="widget widget_sow-image"><div class="so-widget-sow-image so-widget-sow-image-default-d9fa1d607b92">
+
+<div class="sow-image-container">
+<a href="mailto:magazine@proto.ink" >	<img src="../../../../wp-content/uploads/2016/11/callforwriter.png" width="400" height="300" srcset="../../../../wp-content/uploads/2016/11/callforwriter.png 400w, ../../../../wp-content/uploads/2016/11/callforwriter-300x225.png 300w" sizes="(max-width: 400px) 100vw, 400px" 		class="so-widget-image"/>
+</a></div>
+
+</div></aside><aside id="facebook-likebox-3" class="widget widget_facebook_likebox">		<div id="fb-root"></div>
+		<div class="fb-page" data-href="https://www.facebook.com/proto.ink/" data-width="340"  data-height="580" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+		<div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/proto.ink/"><a href="https://www.facebook.com/proto.ink/"></a></blockquote></div>
+		</div>
+		</aside><aside id="quadro-recent-posts-2" class="widget quadro-recents-widget">
+		<ul>
+		
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../../2019/01/15/foundation-ice-thanks-ufonds/index.html" class="quadro-rpost-thumb-link" title="Foundation ICE thanks UFonds!">
+											<img src="../../../../wp-content/themes/binderpro/images/default-thumb.jpg" alt="Foundation ICE thanks UFonds!" width="60" height="60" title="Foundation ICE thanks UFonds!">
+									</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../../2019/01/15/foundation-ice-thanks-ufonds/index.html" title="Foundation ICE thanks UFonds!">Foundation ICE thanks UFonds!</a></h4>
+					<p class="meta">January 15, 2019</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../../2018/03/06/meet-creates-staff-chris-vermaas/index.html" class="quadro-rpost-thumb-link" title="Meet CreaTe&#8217;s Staff: Chris Vermaas">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2018/03/01-UT-Proto-BusinessCard2-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../../2018/03/06/meet-creates-staff-chris-vermaas/index.html" title="Meet CreaTe&#8217;s Staff: Chris Vermaas">Meet CreaTe&#8217;s Staff: Chris Vermaas</a></h4>
+					<p class="meta">March 6, 2018</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../../2018/02/13/how-to-survive-create/index.html" class="quadro-rpost-thumb-link" title="How to survive CreaTe!">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2018/02/Pic-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../../2018/02/13/how-to-survive-create/index.html" title="How to survive CreaTe!">How to survive CreaTe!</a></h4>
+					<p class="meta">February 13, 2018</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../../2018/02/04/join-the-bedrijvendagen-twente-2018/index.html" class="quadro-rpost-thumb-link" title="Join the Bedrijvendagen Twente 2018!">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2018/02/12771583_966871203404885_6392796780865997180_o-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../../2018/02/04/join-the-bedrijvendagen-twente-2018/index.html" title="Join the Bedrijvendagen Twente 2018!">Join the Bedrijvendagen Twente 2018!</a></h4>
+					<p class="meta">February 4, 2018</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../09/21/racist-photo-tagging-algorithms-and-white-suprematist-twitter-bots-when-ai-goes-wrong/index.html" class="quadro-rpost-thumb-link" title="Racist photo-tagging algorithms and white suprematist twitter bots: when AI goes wrong.">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/09/BellPepperAI-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../09/21/racist-photo-tagging-algorithms-and-white-suprematist-twitter-bots-when-ai-goes-wrong/index.html" title="Racist photo-tagging algorithms and white suprematist twitter bots: when AI goes wrong.">Racist photo-tagging algorithms and white suprematist twitter bots: when AI goes wrong.</a></h4>
+					<p class="meta">September 21, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../06/29/life-after-create/index.html" class="quadro-rpost-thumb-link" title="Life after CreaTe">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/06/LifeAfterCreateBanner-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../06/29/life-after-create/index.html" title="Life after CreaTe">Life after CreaTe</a></h4>
+					<p class="meta">June 29, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../06/22/the-art-of-bad-art-festivals/index.html" class="quadro-rpost-thumb-link" title="The art of bad art festivals  ">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/06/JoAnne_Northrup1348766551-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../06/22/the-art-of-bad-art-festivals/index.html" title="The art of bad art festivals  ">The art of bad art festivals  </a></h4>
+					<p class="meta">June 22, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../06/15/friends-couch-video-games-26-must-play-local-gaming-gems/index.html" class="quadro-rpost-thumb-link" title="Friends + Couch + Video Games = 26 Must play local gaming gems">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/06/26localgamesBIG-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../06/15/friends-couch-video-games-26-must-play-local-gaming-gems/index.html" title="Friends + Couch + Video Games = 26 Must play local gaming gems">Friends + Couch + Video Games = 26 Must play local gaming gems</a></h4>
+					<p class="meta">June 15, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../06/09/maker-festival-twente-2017/index.html" class="quadro-rpost-thumb-link" title="Maker Festival Twente 2017">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/06/maker-festival-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../06/09/maker-festival-twente-2017/index.html" title="Maker Festival Twente 2017">Maker Festival Twente 2017</a></h4>
+					<p class="meta">June 9, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../06/01/the-golden-egg-nightmare/index.html" class="quadro-rpost-thumb-link" title="The Golden Egg Nightmare">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/06/startup_nightmare-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../06/01/the-golden-egg-nightmare/index.html" title="The Golden Egg Nightmare">The Golden Egg Nightmare</a></h4>
+					<p class="meta">June 1, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../05/22/8-tech-series-you-need-to-watch/index.html" class="quadro-rpost-thumb-link" title="8 Tech-related series you must watch">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/05/series-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../05/22/8-tech-series-you-need-to-watch/index.html" title="8 Tech-related series you must watch">8 Tech-related series you must watch</a></h4>
+					<p class="meta">May 22, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../05/16/rebrand-our-online-magazine/index.html" class="quadro-rpost-thumb-link" title="Rebrand our online magazine!">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/05/Banner-1-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../05/16/rebrand-our-online-magazine/index.html" title="Rebrand our online magazine!">Rebrand our online magazine!</a></h4>
+					<p class="meta">May 16, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../05/12/living-and-working-tomorrow-today/index.html" class="quadro-rpost-thumb-link" title="Living and Working Tomorrow, today">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/05/4-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../05/12/living-and-working-tomorrow-today/index.html" title="Living and Working Tomorrow, today">Living and Working Tomorrow, today</a></h4>
+					<p class="meta">May 12, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../05/04/creational-geographic/index.html" class="quadro-rpost-thumb-link" title="CreaTional Geographic">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/05/pexels-photo-321111-150x150.jpeg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../05/04/creational-geographic/index.html" title="CreaTional Geographic">CreaTional Geographic</a></h4>
+					<p class="meta">May 4, 2017</p>
+				</div>
+			</li>
+					    <li class="quadro-rpost clear">
+		    	<a href="../../../04/28/blandabland-and-other-cool-module-7-projects/index.html" class="quadro-rpost-thumb-link" title="BLANDABAND and other cool module 7 projects">
+					<img width="150" height="150" src="../../../../wp-content/uploads/2017/04/demoMarketBusiness-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />				</a>
+				<div class="quadro-rpost-data">
+					<h4><a href="../../../04/28/blandabland-and-other-cool-module-7-projects/index.html" title="BLANDABAND and other cool module 7 projects">BLANDABAND and other cool module 7 projects</a></h4>
+					<p class="meta">April 28, 2017</p>
+				</div>
+			</li>
+						   		
+		</ul>
+		</aside>		</div><!-- #secondary -->
+	
+	
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		
+		
+			<div class="inner-footer clear">
+
+				
+									
+					<div class="widg-layout6">
+										</div>
+
+				
+														
+			</div> <!-- .widgetized-area -->
+			
+	
+		<div class="bottom-footer clear">
+			
+			<div class="site-info">
+				Powered by Creative Technology students @ University of Twente			</div><!-- .site-info -->
+			
+			<ul class="social-area  brand-color footer-social-icons"><li><a href="https://www.facebook.com/proto.ink/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li><li><a href="https://www.youtube.com/channel/UCKHu5CQOPs2JxkB7CYxxOUw" target="_blank" title="Youtube"><i class="fa fa-youtube"></i></a></li></ul>			
+		</div>
+		
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<a href="index.html#" class="back-to-top"></a>
+	<div style="display:none">
+	<div class="grofile-hash-map-8881fa39255290b6220e97c6d968f964">
+	</div>
+	</div>
+<script type='text/javascript' defer src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201940'></script>
+<script type='text/javascript' defer src='https://secure.gravatar.com/js/gprofiles.js?ver=2019Octaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='../../../../wp-content/plugins/jetpack/modules/wpgroho.js%3Fver=4.9.11'></script>
+<script type='text/javascript' defer src='../../../../wp-content/themes/binderpro/js/navigation.js%3Fver=20120206'></script>
+<script type='text/javascript' defer src='../../../../wp-content/themes/binderpro/js/parallax.js%3Fver=20141003'></script>
+<script type='text/javascript' defer src='../../../../wp-content/themes/binderpro/js/skip-link-focus-fix.js%3Fver=20130115'></script>
+<script type='text/javascript' defer src='../../../../wp-includes/js/comment-reply.min.js%3Fver=4.9.11'></script>
+<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCIcfEyc4_rWLV73c-rXfM_9uFPrawp4dM&amp;ver=4.9.11'></script>
+<script type='text/javascript' defer src='../../../../wp-includes/js/imagesloaded.min.js%3Fver=3.2.0'></script>
+<script type='text/javascript' defer src='../../../../wp-includes/js/masonry.min.js%3Fver=3.3.2'></script>
+<script type='text/javascript' defer src='../../../../wp-includes/js/jquery/jquery.masonry.min.js%3Fver=3.1.2b'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"https:\/\/proto.ink\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='../../../../wp-content/themes/binderpro/js/scripts.js%3Fver=4.9.11'></script>
+<script type='text/javascript' defer src='../../../../wp-content/themes/binderpro/js/animOnScroll.js%3Fver=4.9.11'></script>
+<script type='text/javascript' defer src='../../../../wp-content/themes/binderpro/js/retina.js%3Fver=4.9.11'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jpfbembed = {"appid":"249643311490","locale":"en_US"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='../../../../wp-content/plugins/jetpack/_inc/build/facebook-embed.min.js'></script>
+<script type='text/javascript' defer src='../../../../wp-includes/js/wp-embed.min.js%3Fver=4.9.11'></script>
+<script async="async" type='text/javascript' defer src='../../../../wp-content/plugins/akismet/_inc/form.js%3Fver=4.0.3'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201940.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.0',blog:'120095058',post:'5853',tz:'2',srv:'proto.ink'} ]);
+	_stq.push([ 'clickTrackerInit', '120095058', '5853' ]);
+</script>
+
+</body>
+</html>
